@@ -344,23 +344,23 @@ public class StatisticService extends BaseCdnServices {
 		Preconditions.checkNotNull(statType, "parameter `statType` should not be null");
 		Preconditions.checkNotNull(region, "parameter `region` should not be null");
 
-		Invocation<RegionDetailSummary> topUrlsSummaryInvocation =
+		Invocation<RegionDetailSummary> regionDetailSummaryInvocation =
 				get(RegionDetailSummary.class, uri("/statistics/region-detail-summary"))
 						.param("domain_name", domainName)
 						.param("stat_type", statType)
 						.param("region", region);
 
 		if (startTime != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("start_time", startTime);
+			regionDetailSummaryInvocation = regionDetailSummaryInvocation.param("start_time", startTime);
 		}
 		if (endTime != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("end_time", endTime);
+			regionDetailSummaryInvocation = regionDetailSummaryInvocation.param("end_time", endTime);
 		}
 		if (enterpriseProjectId != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("enterprise_project_id", enterpriseProjectId);
+			regionDetailSummaryInvocation = regionDetailSummaryInvocation.param("enterprise_project_id", enterpriseProjectId);
 		}
 
-		return topUrlsSummaryInvocation.execute(this.buildExecutionOptions(RegionDetailSummary.class));
+		return regionDetailSummaryInvocation.execute(this.buildExecutionOptions(RegionDetailSummary.class));
 
 	}
 
@@ -386,22 +386,22 @@ public class StatisticService extends BaseCdnServices {
 		Preconditions.checkNotNull(statType, "parameter `statType` should not be null");
 		Preconditions.checkNotNull(carrier, "parameter `carrier` should not be null");
 
-		Invocation<CarrierDetailSummary> topUrlsSummaryInvocation =
+		Invocation<CarrierDetailSummary> carrierDetailSummaryInvocation =
 				get(CarrierDetailSummary.class, uri("/statistics/carrier-detail-summary"))
 						.param("domain_name", domainName)
 						.param("stat_type", statType)
 						.param("carrier", carrier);
 
 		if (startTime != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("start_time", startTime);
+			carrierDetailSummaryInvocation = carrierDetailSummaryInvocation.param("start_time", startTime);
 		}
 		if (endTime != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("end_time", endTime);
+			carrierDetailSummaryInvocation = carrierDetailSummaryInvocation.param("end_time", endTime);
 		}
 		if (enterpriseProjectId != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("enterprise_project_id", enterpriseProjectId);
+			carrierDetailSummaryInvocation = carrierDetailSummaryInvocation.param("enterprise_project_id", enterpriseProjectId);
 		}
-		return topUrlsSummaryInvocation.execute(this.buildExecutionOptions(CarrierDetailSummary.class));
+		return carrierDetailSummaryInvocation.execute(this.buildExecutionOptions(CarrierDetailSummary.class));
 	}
 
 	/**
@@ -470,7 +470,7 @@ public class StatisticService extends BaseCdnServices {
 		Preconditions.checkNotNull(region, "parameter `region` should not be null");
 		Preconditions.checkNotNull(carrier, "parameter `carrier` should not be null");
 
-		Invocation<RegionCarrierDomainSummary> topUrlsSummaryInvocation =
+		Invocation<RegionCarrierDomainSummary> regionCarrierDomainSummaryInvocation =
 				get(RegionCarrierDomainSummary.class, uri("/statistics/region-carrier-domain"))
 						.param("domain_name", domainName)
 						.param("stat_type", statType)
@@ -478,16 +478,16 @@ public class StatisticService extends BaseCdnServices {
 						.param("carrier", carrier);
 
 		if (startTime != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("start_time", startTime);
+			regionCarrierDomainSummaryInvocation = regionCarrierDomainSummaryInvocation.param("start_time", startTime);
 		}
 		if (endTime != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("end_time", endTime);
+			regionCarrierDomainSummaryInvocation = regionCarrierDomainSummaryInvocation.param("end_time", endTime);
 		}
 		if (enterpriseProjectId != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("enterprise_project_id", enterpriseProjectId);
+			regionCarrierDomainSummaryInvocation = regionCarrierDomainSummaryInvocation.param("enterprise_project_id", enterpriseProjectId);
 		}
 
-		return topUrlsSummaryInvocation.execute(this.buildExecutionOptions(RegionCarrierDomainSummary.class));
+		return regionCarrierDomainSummaryInvocation.execute(this.buildExecutionOptions(RegionCarrierDomainSummary.class));
 
 	}
 
@@ -518,7 +518,7 @@ public class StatisticService extends BaseCdnServices {
 		Preconditions.checkNotNull(region, "parameter `region` should not be null");
 		Preconditions.checkNotNull(carrier, "parameter `carrier` should not be null");
 
-		Invocation<RegionCarrierDetail> topUrlsSummaryInvocation =
+		Invocation<RegionCarrierDetail> regionCarrierDetailInvocation =
 				get(RegionCarrierDetail.class, uri("/statistics/region-carrier-detail"))
 						.param("domain_name", domainName)
 						.param("stat_type", statType)
@@ -526,22 +526,22 @@ public class StatisticService extends BaseCdnServices {
 						.param("carrier", carrier);
 
 		if (startTime != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("start_time", startTime);
+			regionCarrierDetailInvocation = regionCarrierDetailInvocation.param("start_time", startTime);
 		}
 
 		if (endTime != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("end_time", endTime);
+			regionCarrierDetailInvocation = regionCarrierDetailInvocation.param("end_time", endTime);
 		}
 
 		if (interval != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("interval", interval);
+			regionCarrierDetailInvocation = regionCarrierDetailInvocation.param("interval", interval);
 		}
 
 		if (enterpriseProjectId != null) {
-			topUrlsSummaryInvocation = topUrlsSummaryInvocation.param("enterprise_project_id", enterpriseProjectId);
+			regionCarrierDetailInvocation = regionCarrierDetailInvocation.param("enterprise_project_id", enterpriseProjectId);
 		}
 
-		return topUrlsSummaryInvocation.execute(this.buildExecutionOptions(RegionCarrierDetail.class));
+		return regionCarrierDetailInvocation.execute(this.buildExecutionOptions(RegionCarrierDetail.class));
 
 	}
 }
