@@ -47,5 +47,5 @@ public class DomainSummary implements ModelEntity{
 	@JsonProperty("service_area")
 	private String serviceArea;
 	
-	private Long value;
+	private Double value;
 }

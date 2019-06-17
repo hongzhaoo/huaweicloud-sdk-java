@@ -48,7 +48,7 @@ public class DomainSummaryDetail implements ModelEntity{
 	@JsonProperty("stat_type")
 	private String statType;
 	
-	private List<Long> values;
+	private List<Double> values;
 	
 	@JsonProperty("service_area")
 	private String serviceArea;
